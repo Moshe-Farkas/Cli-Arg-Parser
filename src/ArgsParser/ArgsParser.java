@@ -22,27 +22,27 @@ public class ArgsParser {
     }
 
     public Boolean getBoolArg(String argName) {
-        if (!argsFound.containsKey(argName)) {
+        if (!expectedArgs.contains(argName)) {
             throw new RuntimeException(String.format("Unexpected Argument: '%s'.", argName));
         }
         return (Boolean) argsFound.get(argName).getValue();
     }
 
     public String[] getStringArrayArg(String argName) {
-        if (!argsFound.containsKey(argName))
+        if (!expectedArgs.contains(argName))
             throw new RuntimeException(String.format("Unexpected Argument: '%s'.", argName));
         return (String[]) argsFound.get(argName).getValue();
     }
 
     public Long getLongArg(String argName) {
-        if (!argsFound.containsKey(argName)) {
+        if (!expectedArgs.contains(argName)) {
             throw new RuntimeException(String.format("Unexpected Argument: '%s'.", argName));
         }
         return (Long) argsFound.get(argName).getValue();
     }
 
     public Double getDoubleArg(String argName) {
-        if (!argsFound.containsKey(argName))
+        if (!expectedArgs.contains(argName))
             throw new RuntimeException(String.format("Unexpected Argument: '%s'.", argName));
         return (Double) argsFound.get(argName).getValue();
     }
